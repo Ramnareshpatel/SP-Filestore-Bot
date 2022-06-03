@@ -75,11 +75,11 @@ async def start_command(client: Bot, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except BaseException:
                 return
-        temp_msg = await message.reply("<code>Tunggu Sebentar...</code>")
+        temp_msg = await message.reply("<i><b>Wᴀɪᴛ Fᴏʀ A Wʜɪʟᴇ...</b></i>")
         try:
             messages = await get_messages(client, ids)
         except BaseException:
-            await message.reply_text("<b>Telah Terjadi Error </b>🥺")
+            await message.reply_text("<i><b>Aɴ Eʀʀᴏʀ Hᴀs Oᴄᴄᴜʀʀᴇᴅ🥺</b></i>")
             return
         await temp_msg.delete()
 
@@ -157,7 +157,7 @@ async def get_users(client: Bot, message: Message):
         chat_id=message.chat.id, text="<code>Processing ...</code>"
     )
     users = await full_userbase()
-    await msg.edit(f"{len(users)} <b>Pengguna menggunakan bot ini</b>")
+    await msg.edit(f"{len(users)} <i><b>Usᴇʀs Usᴇ Tʜɪs Bᴏᴛ</b></i>")
 
 
 @Bot.on_message(filters.command("broadcast") & filters.user(ADMINS))
@@ -172,7 +172,7 @@ async def send_text(client: Bot, message: Message):
         unsuccessful = 0
 
         pls_wait = await message.reply(
-            "<code>Broadcasting Message Tunggu Sebentar...</code>"
+            "<i><b>Bʀᴏᴀᴅᴄᴀsᴛɪɴɢ Mᴇssᴀɢᴇ Wᴀɪᴛ A Mᴏᴍᴇɴᴛ...</b></i>"
         )
         for row in query:
             chat_id = int(row[0])
@@ -191,8 +191,8 @@ async def send_text(client: Bot, message: Message):
                 except BaseException:
                     unsuccessful += 1
                 total += 1
-        status = f"""<b><u>Berhasil Broadcast</u>
-Jumlah Pengguna: <code>{total}</code>
+        status = f"""<i><b>Sᴜᴄᴄᴇssғᴜʟʟʏ Bʀᴏᴀᴅᴄᴀsᴛ</b></i>
+Nᴜᴍʙᴇʀ Oғ Usᴇʀs: <code>{total}</code>
 Berhasil: <code>{successful}</code>
 Gagal: <code>{unsuccessful}</code>
 Pengguna diblokir: <code>{blocked}</code>
