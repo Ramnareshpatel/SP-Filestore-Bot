@@ -55,14 +55,14 @@ def fsub_button(client, message):
     if not FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons = [
             [
-                InlineKeyboardButton(text="ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=client.invitelink2),
+                InlineKeyboardButton(text="⚔️ Jᴏɪɴ Gʀᴏᴜᴘ", url=client.invitelink2),
             ],
         ]
         try:
             buttons.append(
                 [
                     InlineKeyboardButton(
-                        text="ᴄᴏʙᴀ ʟᴀɢɪ",
+                        text="🔁 Tʀʏ Aɢᴀɪɴ",
                         url=f"https://t.me/{client.username}?start={message.command[1]}",
                     )
                 ]
@@ -73,14 +73,14 @@ def fsub_button(client, message):
     if FORCE_SUB_CHANNEL and not FORCE_SUB_GROUP:
         buttons = [
             [
-                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
+                InlineKeyboardButton(text="💫 Jᴏɪɴ Cʜᴀɴɴᴇʟ", url=client.invitelink),
             ],
         ]
         try:
             buttons.append(
                 [
                     InlineKeyboardButton(
-                        text="ᴄᴏʙᴀ ʟᴀɢɪ",
+                        text="🔁 Tʀʏ Aɢᴀɪɴ",
                         url=f"https://t.me/{client.username}?start={message.command[1]}",
                     )
                 ]
@@ -91,15 +91,15 @@ def fsub_button(client, message):
     if FORCE_SUB_CHANNEL and FORCE_SUB_GROUP:
         buttons = [
             [
-                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
-                InlineKeyboardButton(text="ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=client.invitelink2),
+                InlineKeyboardButton(text="💫 Jᴏɪɴ Cʜᴀɴɴᴇʟ", url=client.invitelink),
+                InlineKeyboardButton(text="⚔️ Jᴏɪɴ Gʀᴏᴜᴘ", url=client.invitelink2),
             ],
         ]
         try:
             buttons.append(
                 [
                     InlineKeyboardButton(
-                        text="ᴄᴏʙᴀ ʟᴀɢɪ",
+                        text="🔁 Tʀʏ Aɢᴀɪɴ",
                         url=f"https://t.me/{client.username}?start={message.command[1]}",
                     )
                 ]
