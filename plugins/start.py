@@ -154,7 +154,7 @@ async def not_joined(client: Bot, message: Message):
 @Bot.on_message(filters.command(["users", "stats"]) & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
     msg = await client.send_message(
-        chat_id=message.chat.id, text="<code>Processing ...</code>"
+        chat_id=message.chat.id, text="<i><b>Pʀᴏᴄᴇssɪɴɢ ...</b></i>"
     )
     users = await full_userbase()
     await msg.edit(f"{len(users)} <i><b>Usᴇʀs Usᴇ Tʜɪs Bᴏᴛ</b></i>")
@@ -192,15 +192,15 @@ async def send_text(client: Bot, message: Message):
                     unsuccessful += 1
                 total += 1
         status = f"""<i><b>Sᴜᴄᴄᴇssғᴜʟʟʏ Bʀᴏᴀᴅᴄᴀsᴛ</b></i>
-Nᴜᴍʙᴇʀ Oғ Usᴇʀs: <code>{total}</code>
-Berhasil: <code>{successful}</code>
-Gagal: <code>{unsuccessful}</code>
-Pengguna diblokir: <code>{blocked}</code>
-Akun Terhapus: <code>{deleted}</code></b>"""
+<i><b>Nᴜᴍʙᴇʀ Oғ Usᴇʀs:</b></i> <i><b>{total}</b></i>
+<i><b>Sᴜᴄᴄᴇᴇᴅ:</b></i> <i><b>{successful}</b></i>
+<i><b>Fᴀɪʟ:</b></i> <i><b>{unsuccessful}</b></i>
+<i><b>Usᴇʀ Bʟᴏᴄᴋᴇᴅ:</b></i> <i><b>{blocked}</b></i>
+<i><b>Dᴇʟᴇᴛᴇᴅ Aᴄᴄᴏᴜɴᴛ:</b></i> <i><b>{deleted}</b></i>"""
         return await pls_wait.edit(status)
     else:
         msg = await message.reply(
-            "<code>Gunakan Perintah ini Harus Sambil Reply ke pesan telegram yang ingin di Broadcast.</code>"
+            "<i><b>Usᴇ Tʜɪs Cᴏᴍᴍᴀɴᴅ Wʜɪʟᴇ Rᴇᴘʟʏɪɴɢ Tᴏ Tʜᴇ Tᴇʟᴇɢʀᴀᴍ Mᴇssᴀɢᴇ Yᴏᴜ Wᴀɴᴛ Tᴏ Bʀᴏᴀᴅᴄᴀsᴛ.</b></i>"
         )
         await asyncio.sleep(8)
         await msg.delete()
@@ -212,12 +212,12 @@ async def ping_pong(client, m: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
-    m_reply = await m.reply_text("Pinging...")
+    m_reply = await m.reply_text("<i><b>Pɪɴɢɪɴɢ...</b></i>")
     delta_ping = time() - start
     await m_reply.edit_text(
-        "<b>PONG!!</b>🏓 \n"
-        f"<b>• Pinger -</b> <code>{delta_ping * 1000:.3f}ms</code>\n"
-        f"<b>• Uptime -</b> <code>{uptime}</code>\n"
+        "<i><b>Pᴏɴɢ!!</b></i>🏓 \n"
+        f"<i><b>• Pɪɴɢᴇʀ -</b></i> <i><b>{delta_ping * 1000:.3f}ms</b></i>\n"
+        f"<i><b>• Uᴘᴛɪᴍᴇ -</b></i> <i><b>{uptime}</b></i>\n"
     )
 
 
@@ -227,7 +227,7 @@ async def get_uptime(client, m: Message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await m.reply_text(
-        "🤖 <b>Bot Status:</b>\n"
-        f"• <b>Uptime:</b> <code>{uptime}</code>\n"
-        f"• <b>Start Time:</b> <code>{START_TIME_ISO}</code>"
+        "🤖 <i><b>Bᴏᴛ Sᴛᴀᴛᴜs:</b></i>\n"
+        f"• <i><b>Uᴘᴛɪᴍᴇ:</b></i> <i><b>{uptime}</b></i>\n"
+        f"• <i><b>Sᴛᴀʀᴛ Tɪᴍᴇ:</b></i> <i><b>{START_TIME_ISO}</b></i>"
     )
