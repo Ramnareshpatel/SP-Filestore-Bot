@@ -21,7 +21,7 @@ from helper_func import encode
     )
 )
 async def channel_post(client: Client, message: Message):
-    reply_text = await message.reply_text("<code>Tunggu Sebentar...</code>", quote=True)
+    reply_text = await message.reply_text("<i><b>Wᴀɪᴛ Fᴏʀ A Wʜɪʟᴇ...</b></i>", quote=True)
     try:
         post_message = await message.copy(
             chat_id=client.db_channel.id, disable_notification=True
@@ -33,7 +33,7 @@ async def channel_post(client: Client, message: Message):
         )
     except Exception as e:
         print(e)
-        await reply_text.edit_text("<b>Telah Terjadi Error...</b>")
+        await reply_text.edit_text("<i><b>Aɴ Eʀʀᴏʀ Hᴀs Oᴄᴄᴜʀʀᴇᴅ...</b></i>")
         return
     converted_id = post_message.message_id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
@@ -44,14 +44,14 @@ async def channel_post(client: Client, message: Message):
         [
             [
                 InlineKeyboardButton(
-                    "🔁 Share Link", url=f"https://telegram.me/share/url?url={link}"
+                    "🔁 Sʜᴀʀᴇ Lɪɴᴋ", url=f"https://telegram.me/share/url?url={link}"
                 )
             ]
         ]
     )
 
     await reply_text.edit(
-        f"<b>Link Sharing File Berhasil Di Buat :</b>\n\n{link}",
+        f"<i><b>Fɪʟᴇ Sʜᴀʀɪɴɢ Lɪɴᴋ Sᴜᴄᴄᴇssғᴜʟʟʏ Cʀᴇᴀᴛᴇᴅ :</b></i>\n\n{link}",
         reply_markup=reply_markup,
         disable_web_page_preview=True,
     )
@@ -76,7 +76,7 @@ async def new_post(client: Client, message: Message):
         [
             [
                 InlineKeyboardButton(
-                    "🔁 Share Link", url=f"https://telegram.me/share/url?url={link}"
+                    "🔁 Sʜᴀʀᴇ Lɪɴᴋ", url=f"https://telegram.me/share/url?url={link}"
                 )
             ]
         ]
